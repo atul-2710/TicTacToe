@@ -1,6 +1,7 @@
 # 🕹️ Tic-Tac-Toe: Terminal Edition
 
 > This is a simple Tic Tac Toe game made with HTML, CSS, and JavaScript as a stepping stone project for me into Web Development.
+[🎮 Play the Live Game Here!](https://your-actual-domain-name.surge.sh)
 
 ## 📝 Overview
 
