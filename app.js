@@ -3,9 +3,12 @@ let resetBtn = document.querySelector("#reset-btn")
 let newGameBtn = document.querySelector("#new-btn")
 let msgContainer = document.querySelector(".msg-container")
 let msg = document.querySelector("#msg")
+let game = document.querySelector("#games")
+let xWin = document.querySelector("#x-wins")
+let oWin = document.querySelector("#o-wins")
 
 let turnO = true //playerX, playerO
-
+let score = [0, 0, 0] //[games,O-wins,X-wins]
 const winPatterns = [
   [0, 1, 2],
   [3, 4, 5],
@@ -49,6 +52,15 @@ const enableBoxes = () => {
   }
 }
 
+const scoreBoard = (winner) => {
+  score[0]++
+  if (winner === "X") score[2]++
+  else if (winner === "O") score[1]++
+  game.innerText = `Games Played : ${score[0]}`
+  xWin.innerText = `Games won by Player X : ${score[2]}`
+  oWin.innerText = `Games won by Player O : ${score[1]}`
+}
+
 const showWinner = (winner) => {
   msg.innerText = `Congratulations, Winner is ${winner}`
   msgContainer.classList.remove("hide")
@@ -62,6 +74,7 @@ const checkWinner = () => {
     let pos3 = boxes[pattern[2]].innerText
     if (pos1 != "" && pos2 != "" && pos3 != "") {
       if (pos1 === pos2 && pos1 === pos3) {
+        scoreBoard(pos1)
         showWinner(pos1)
       }
     }

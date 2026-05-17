@@ -52,6 +52,14 @@ body {
   color: #ffffc7;
   font-size: 5vmin;
 }
+.score-board {
+  color: #b0413b;
+  font-size: 5vmin;
+  width: 50vmin;
+  border: 0.5rem dotted #b0413b;
+  background-color: #ffffc7;
+  border-radius: 1rem;
+}
 .msg-container {
   height: 100vmin;
   display: flex;
@@ -60,6 +68,12 @@ body {
   align-items: center;
   gap: 4rem;
 }
+
 .hide {
   display: none;
+}
+.score {
+  text-align: left;
+  font-size: 3vmin;
+  padding: 2vmin;
 }
