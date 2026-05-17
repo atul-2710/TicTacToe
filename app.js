@@ -56,18 +56,21 @@ const winPossibility = (player) => {
     if (pos1 !== "" && pos2 !== "" && pos3 === "") {
       if (pos1 === pos2 && pos1 === player) {
         boxes[pattern[2]].innerText = "X"
+        boxes[pattern[2]].classList.add("player-x")
         boxes[pattern[2]].disabled = true
         return true
       }
     } else if (pos1 !== "" && pos2 === "" && pos3 !== "") {
       if (pos1 === pos3 && pos1 === player) {
         boxes[pattern[1]].innerText = "X"
+        boxes[pattern[1]].classList.add("player-x")
         boxes[pattern[1]].disabled = true
         return true
       }
     } else if (pos1 === "" && pos2 !== "" && pos3 !== "") {
       if (pos2 === pos3 && pos2 === player) {
         boxes[pattern[0]].innerText = "X"
+        boxes[pattern[0]].classList.add("player-x")
         boxes[pattern[0]].disabled = true
         return true
       }
@@ -83,6 +86,7 @@ const playSystem = () => {
     for (let val of checkOrder) {
       if (boxes[val].innerText === "") {
         boxes[val].innerText = "X"
+        boxes[val].classList.add("player-x")
         boxes[val].disabled = true
         return
       }
@@ -96,6 +100,7 @@ boxes.forEach((box) => {
     if (turnO) {
       //Standard player O move
       box.innerText = "O"
+      box.classList.add("player-o")
       box.disabled = true
       turnO = false //manual flip for standard-2player
       if (checkWinner()) return //checks if player O won
@@ -108,6 +113,7 @@ boxes.forEach((box) => {
     } else {
       //Standard Player X move (for mode 1)
       box.innerText = "X"
+      box.classList.add("player-x")
       turnO = true
       box.disabled = true
       checkWinner()
@@ -124,6 +130,7 @@ const enableBoxes = () => {
   for (let box of boxes) {
     box.disabled = false
     box.innerText = ""
+    box.classList.remove("player-x", "player-o")
   }
 }
 

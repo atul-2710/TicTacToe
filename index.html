@@ -7,22 +7,22 @@
     <title>Tic Tac Toe Game</title>
   </head>
   <body>
-    <div class="welcome-screen">
+    <div class="welcome-screen fullscreen-flex">
       <h1>Tic Tac Toe</h1>
       <div class="game-mode">
         <p id="choose-mode">Choose Game Mode</p>
         <div>
-          <button id="mode1">Player VS Player</button>
-          <button id="mode2">Player VS System</button>
+          <button id="mode1" class="btn">Player VS Player</button>
+          <button id="mode2" class="btn">Player VS System</button>
         </div>
       </div>
     </div>
 
-    <div class="msg-container hide">
+    <div class="msg-container fullscreen-flex hide">
       <p id="msg">Winner</p>
       <div>
-        <button id="new-btn">New Game</button>
-        <button id="continue-btn">Continue Game</button>
+        <button id="new-btn" class="btn">New Game</button>
+        <button id="continue-btn" class="btn">Continue Game</button>
       </div>
 
       <div class="score-board">
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <button id="reset-btn">Reset Board</button>
+      <button id="reset-btn" class="btn">Reset Board</button>
       <script src="./app.js"></script>
     </main>
   </body>
