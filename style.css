@@ -48,6 +48,14 @@ body {
   border-radius: 1rem;
   border: none;
 }
+#continue-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #191919;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+}
 #msg {
   color: #ffffc7;
   font-size: 5vmin;
@@ -55,7 +63,7 @@ body {
 .score-board {
   color: #b0413b;
   font-size: 5vmin;
-  width: 50vmin;
+  width: 65vmin;
   border: 0.5rem dotted #b0413b;
   background-color: #ffffc7;
   border-radius: 1rem;

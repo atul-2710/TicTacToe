@@ -1,12 +1,13 @@
 let boxes = document.querySelectorAll(".box")
 let resetBtn = document.querySelector("#reset-btn")
 let newGameBtn = document.querySelector("#new-btn")
+let continueGameBtn = document.querySelector("#continue-btn")
 let msgContainer = document.querySelector(".msg-container")
 let msg = document.querySelector("#msg")
 let game = document.querySelector("#games")
 let xWin = document.querySelector("#x-wins")
 let oWin = document.querySelector("#o-wins")
-
+let overallWinner = document.querySelector("#overall-winner")
 let turnO = true //playerX, playerO
 let score = [0, 0, 0] //[games,O-wins,X-wins]
 const winPatterns = [
@@ -19,8 +20,14 @@ const winPatterns = [
   [0, 4, 8],
   [2, 4, 6]
 ]
-
 const resetGame = () => {
+  resetBoard()
+  score[0] = 0
+  score[1] = 0
+  score[2] = 0
+}
+
+const resetBoard = () => {
   enableBoxes()
   turnO = true
   msgContainer.classList.add("hide")
@@ -59,10 +66,18 @@ const scoreBoard = (winner) => {
   game.innerText = `Games Played : ${score[0]}`
   xWin.innerText = `Games won by Player X : ${score[2]}`
   oWin.innerText = `Games won by Player O : ${score[1]}`
+  if (score[1] > score[2]) {
+    overallWinner.innerText = "Overall Game Winner : Player O"
+  } else if (score[1] < score[2]) {
+    overallWinner.innerText = "Overall Game Winner : Player X"
+  } else {
+    overallWinner.innerText = "Overall Game Winner : Game is currently Tied"
+  }
+  showWinner(winner)
 }
 
 const showWinner = (winner) => {
-  msg.innerText = `Congratulations, Winner is ${winner}`
+  msg.innerText = `Congratulations, Current Game Winner is ${winner}`
   msgContainer.classList.remove("hide")
   disableBoxes()
 }
@@ -75,11 +90,11 @@ const checkWinner = () => {
     if (pos1 != "" && pos2 != "" && pos3 != "") {
       if (pos1 === pos2 && pos1 === pos3) {
         scoreBoard(pos1)
-        showWinner(pos1)
       }
     }
   }
 }
 
 newGameBtn.addEventListener("click", resetGame)
-resetBtn.addEventListener("click", resetGame)
+resetBtn.addEventListener("click", resetBoard)
+continueGameBtn.addEventListener("click", resetBoard)

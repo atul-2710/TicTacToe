@@ -9,10 +9,14 @@
   <body>
     <div class="msg-container hide">
       <p id="msg">Winner</p>
-      <button id="new-btn">New Game</button>
+      <div>
+        <button id="new-btn">New Game</button>
+        <button id="continue-btn">Continue Game</button>
+      </div>
       <div class="score-board">
         <p>Score Board</p>
         <div class="score">
+          <p id="overall-winner">Overall Game Winner : Score not Recorded yet!</p>
           <p id="games">Games Played :</p>
           <p id="x-wins">Games won by Player X :</p>
           <p id="o-wins">Games won by Player O :</p>
@@ -34,7 +38,7 @@
           <button class="box"></button>
         </div>
       </div>
-      <button id="reset-btn">Reset Game</button>
+      <button id="reset-btn">Reset Board</button>
       <script src="./app.js"></script>
     </main>
   </body>
