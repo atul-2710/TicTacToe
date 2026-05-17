@@ -135,7 +135,7 @@ body {
 .score-board {
   color: var(--accent-color);
   font-size: 5vmin;
-  width: 65vmin;
+  width: 75vmin;
   border: 0.3rem dashed var(--accent-color);
   background-color: var(--text-light);
   border-radius: 1rem;

@@ -12,6 +12,8 @@ let mode1 = document.querySelector("#mode1")
 let mode2 = document.querySelector("#mode2")
 let mainGame = document.querySelector(".main-game")
 let welcome = document.querySelector(".welcome-screen")
+let endBtn = document.querySelector("#end-btn")
+
 let turnO = true //playerX, playerO
 let system = true //System as player
 let score = [0, 0, 0] //[games,O-wins,X-wins]
@@ -178,6 +180,7 @@ const checkWinner = () => {
 newGameBtn.addEventListener("click", resetGame)
 resetBtn.addEventListener("click", resetBoard)
 continueGameBtn.addEventListener("click", resetBoard)
+
 mode1.addEventListener("click", () => {
   system = false
   welcome.classList.add("hide")
@@ -187,4 +190,13 @@ mode2.addEventListener("click", () => {
   system = true
   welcome.classList.add("hide")
   mainGame.classList.remove("hide")
+})
+
+endBtn.addEventListener("click", () => {
+  disableBoxes()
+  msg.innerText = "Game Ended Early. No Winner!"
+  game.innerText = `Games Played : ${score[0]}`
+  xWin.innerText = `Games won by Player X : ${score[2]}`
+  oWin.innerText = `Games won by Player O : ${score[1]}`
+  msgContainer.classList.remove("hide")
 })
