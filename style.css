@@ -7,6 +7,39 @@ body {
   background-color: #548687;
   text-align: center;
 }
+
+.welcome-screen {
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.welcome-screen h1 {
+  font-size: 4rem;
+  color: #ffffc7;
+}
+
+.game-mode {
+  color: #b0413b;
+  font-size: 5vmin;
+  width: 65vmin;
+  border: 0.2rem solid #b0413b;
+  background-color: #ffffc7;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.game-mode button {
+  padding: 1rem;
+  font-size: 0.75rem;
+  background-color: #191919;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  gap: 1rem;
+}
+
 .container {
   height: 70vh;
   display: flex;
